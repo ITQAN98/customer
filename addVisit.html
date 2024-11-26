@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Visit</title>
+</head>
+<body>
+    <h3>Add Visit</h3>
+    <form id="visit-form">
+    
+        <label for="visit-date">Date:</label>
+        <input type="date" id="visit-date"><br>
+
+        <button type="submit">Submit Visit</button>
+    </form>
+
+    <script>
+        // Get the parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const customerName = urlParams.get('customer_name');
+        const groupName = urlParams.get('group_name');
+
+        // Populate the form fields with the values from the URL
+        document.getElementById('customer-name').value = customerName;
+        document.getElementById('customer-group').value = groupName;
+
+        // Handle form submission
+        document.getElementById('visit-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const employee = document.getElementById('employee').value;
+            const visitDate = document.getElementById('visit-date').value;
+
+            axios.post('https://itqan-online.com/apps/test-visits/api.php?fun=addVisit', {
+                customer_id: urlParams.get('customer_id'),
+                employee: employee,
+                date: visitDate,
+                type: 'visit'  // Assuming visit type is 'visit'
+            })
+            .then(response => {
+                alert('Visit added successfully!');
+                // Optionally, reset the form and do further actions
+            })
+            .catch(error => {
+                console.error('Error adding visit', error);
+                alert('Failed to add visit');
+            });
+        });
+    </script>
+</body>
+</html>

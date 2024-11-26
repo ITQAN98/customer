@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Search</title>
+  <link rel="stylesheet" href="./search.css">
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+  <div class="navbar">
+    <button id="logoutButton" class="navButton"> logout</button>
+    <button id="addCustomerButton" class="navButton"> addCustomer</button>
+    <input type="text" id="searchInput" placeholder="ابحث عن اسم العميل">
+    <button id="searchButton" class="navButton">search</button>
+    <button id="backToCustomersButton" class="navButton">Back to All Customers</button> <!-- زر العودة -->
+  </div>
+
+  <!-- نموذج إضافة عميل -->
+  <div id="addCustomerForm" class="addCustomerForm" style="display: none;">
+    <h3>addCustomer</h3>
+    <form id="addCustomerFormDetails">
+      <label for="customerName"> customerName:</label>
+      <input type="text" id="customerName" required>
+
+      <label for="groupName"> groupName:</label>
+      <input type="text" id="groupName" required>
+
+      <button type="submit" class="submitButton"> addCustomer</button>
+      <button type="button" class="cancelButton" onclick="closeAddForm()">cancle</button>
+    </form>
+  </div>
+
+  <!-- نموذج تعديل عميل -->
+  <div id="editCustomerForm" class="editCustomerForm" style="display: none;">
+    <h3>editCustomer</h3>
+    <form id="editCustomerFormDetails">
+      <input type="hidden" id="editCustomerId" /> 
+      <label for="editCustomerName"> Customer Name:</label>
+      <input type="text" id="editCustomerName" required>
+
+      <label for="editGroupName">GroupName</label>
+      <input type="text" id="editGroupName" required>
+      
+
+
+      <button type="submit" class="submitButton">edit </button>
+    </form>
+  </div>
+  <div id="groupContainer">
+    <!-- سيتم إضافة أسماء المجموعات هنا -->
+  </div>
+  <!-- جدول العملاء -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Status</th>
+         <th>Customer Name</th>
+         <th class="tdId"> ID</th>
+         <!-- عمود ستاتس -->
+      </tr>
+    </thead>
+    <tbody id="customerListBody">
+      <!-- سيتم عرض البيانات هنا -->
+    </tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

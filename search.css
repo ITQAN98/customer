@@ -1,0 +1,246 @@
+/* تنسيق عام للصفحة */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('background-image.jpg'); 
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* ملء كامل الشاشة */
+  color: #000;
+  overflow-x: hidden; 
+}
+
+/* شريط التنقل */
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #333; 
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* زر تسجيل الخروج */
+.navbar .logout {
+  margin-right: auto; 
+  padding: 10px 15px;
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navbar .logout:hover {
+  background-color: #3b8b3e;
+}
+
+/* إدخال البحث */
+.navbar input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  box-sizing: border-box;
+  margin-right: 10px; /* إضافة مسافة بين حقل البحث والأزرار */
+}
+
+/* أزرار في شريط التنقل */
+.navbar button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navbar button:hover {
+  background-color: #45a049;
+}
+
+/* تنسيق لحقل الإدخال */
+.input {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; 
+  margin-bottom: 20px;
+  width: 100%;
+  z-index: 10; 
+}
+
+/* زر البحث */
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+/* زر البحث */
+#searchButton {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+#searchButton:hover {
+  background-color: #45a049;
+}
+
+/* جدول عرض العملاء */
+table {
+  width: 100%; /* جعل الجدول يأخذ كامل العرض */
+  height: 100%; /* جعل الجدول يملأ المساحة العمودية المتاحة */
+  max-width: 100%; /* تأكد من أن الجدول لا يتجاوز العرض الكامل */
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+thead {
+  background-color: #4CAF50;
+  color: #fff; /* تغيير لون النص في رأس الجدول إلى الأبيض */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+th {
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+td {
+  padding: 12px;
+  text-align: right;
+  border: 1px solid #ddd;
+  font-size: 16px; 
+}
+
+/* تنسيق خاص بالشريط الذي يعرض المجموعات */
+#groupContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* تنسيق الأزرار الخاصة بالمجموعات */
+.groupButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* التأثير عند مرور الماوس على الأزرار */
+.groupButton:hover {
+  background-color: #45a049;
+}
+
+/* في حالة عدم وجود مجموعات لعرضها */
+.noGroupsMessage {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* تنسيق .status في الجدول */
+.status {
+  display: flex;
+  gap: 15px; /* زيادة التباعد بين العناصر */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* إضافة خط جديد عندما يكون هناك مساحة ضيقة */
+}
+
+.days-container {
+  flex: 1;
+  text-align: right;
+  padding-right: 15px; /* إضافة padding إضافي على اليمين */
+}
+
+.wall-container {
+  flex: 1;
+  text-align: left;
+  border-left: 1px solid #ccc;
+  padding-left: 15px; /* إضافة padding إضافي على اليسار */
+}
+
+.wallButton {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.wallButton:hover {
+  background-color: #45a049;
+}
+
+.daysSinceLastVisit {
+  font-size: 14px;
+  color: #555;
+}
+
+/* تحسين التفاعل مع الـ status على الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar button, .navbar .logout, #searchButton {
+    margin: 5px 0;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .status {
+    flex-direction: column; /* تغيير الاتجاه إلى عمودي على الشاشات الصغيرة */
+    gap: 10px;
+  }
+
+  .days-container, .wall-container {
+    width: 100%; /* تأكد من أن كل عنصر يأخذ العرض الكامل في الوضع العمودي */
+    text-align: left;
+    padding: 10px 0;
+  }
+}
